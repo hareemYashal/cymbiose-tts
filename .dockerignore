@@ -1,0 +1,32 @@
+# Python virtual environment and cache
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environment files
+.env
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+
+# Git and version control
+.git/
+.gitignore
+
+# Test files and logs
+test.wav*
+transcription_debug.log
+*.log
+
+# Temporary directories
+temp_audio/
+
+# Model cache (will be downloaded in container)
+models/
+
+# Documentation (not needed in container)
+README.md 
