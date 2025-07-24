@@ -203,6 +203,12 @@ class RealtimeTranscriber:
 
 # --- Flask App ---
 app = Flask(__name__)
+
+# Configure maximum file upload size (default: 50MB, configurable via environment)
+MAX_CONTENT_LENGTH = int(os.getenv("MAX_CONTENT_LENGTH", 50 * 1024 * 1024))  # 50MB default
+app.config['MAX_CONTENT_LENGTH'] = MAX_CONTENT_LENGTH
+logger.info(f"📁 Flask MAX_CONTENT_LENGTH set to {MAX_CONTENT_LENGTH / (1024 * 1024):.1f} MB")
+
 transcriber = None
 
 @app.route('/transcribe', methods=['POST'])
